@@ -1,0 +1,10 @@
+# Ignore git related files/folders
+.git
+.gitignore
+
+# Ignore Dockerfile itself
+Dockerfile
+
+# Ignore local dependencies (future proof)
+node_modules
+npm-debug.log
