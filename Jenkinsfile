@@ -4,12 +4,11 @@ pipeline {
         DOCKER_IMAGE = "bakialakshmi/trend-app:latest"
         KUBECONFIG = "/home/ec2-user/.kube/config"
     }
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/BAKIALAKSHMI13/TrendApp.git'
-            }
-        }
+    stage('Checkout') {
+    steps {
+        git branch: 'main', url: 'https://github.com/BAKIALAKSHMI13/TrendApp.git'
+    }
+}
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $DOCKER_IMAGE .'
