@@ -3,7 +3,8 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "bakialakshmi/trend-app:latest"
-        KUBECONFIG = "/home/ec2-user/.kube/config"
+        KUBECONFIG = "/var/lib/jenkins/.kube/config"
+        AWS_DEFAULT_REGION = "ap-south-1"
     }
 
     stages {
