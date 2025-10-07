@@ -39,13 +39,16 @@ pipeline {
 
         stage('Deploy to EKS') {
             steps {
-                sh '''
+                script {
+                  withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'AWS']]) {
+                  sh '''
                     # Example deployment step
                     aws eks update-kubeconfig --region ap-south-1 --name project2
                     chown -R jenkins:jenkins /var/lib/jenkins/.kube
                     kubectl apply -f k8s/deployment.yaml --validate=false
                     kubectl apply -f k8s/service.yaml --validate=false
                 '''
+                  }
             }
         }
     }
