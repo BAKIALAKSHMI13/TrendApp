@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sh '''
                     # Example deployment step
-                    aws eks update-kubeconfig --region ap-south-1 --name trendapp-cluster
+                    aws eks update-kubeconfig --region ap-south-1 --name project2
                     chown -R jenkins:jenkins /var/lib/jenkins/.kube
                     kubectl apply -f k8s/deployment.yaml
                     kubectl apply -f k8s/service.yaml
