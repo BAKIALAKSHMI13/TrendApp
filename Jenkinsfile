@@ -49,6 +49,7 @@ pipeline {
                     kubectl apply -f k8s/service.yaml --validate=false
                 '''
                   }
+                )
             }
         }
     }
