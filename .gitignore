@@ -1,4 +1,6 @@
 # Ignore Terraform provider binaries and state files
-terraform/.terraform/
-*.tfstate
-*.tfstate.backup
+echo "terraform/.terraform/" >> .gitignore
+echo "*.tfstate" >> .gitignore
+echo "*.tfstate.backup" >> .gitignore
+git add .gitignore
+git commit -m "Ignore Terraform binaries and state files"
